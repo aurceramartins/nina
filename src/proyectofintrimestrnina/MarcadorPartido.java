@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 public class MarcadorPartido extends javax.swing.JFrame {
 
     Crono crono = new Crono();
+    
 
     public MarcadorPartido() {
         
@@ -221,6 +222,7 @@ public class MarcadorPartido extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        //boton volver para volver del marcador a la pantalla principal
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

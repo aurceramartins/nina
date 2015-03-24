@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -44,7 +43,7 @@ public class AlineacionLocal extends javax.swing.JDialog {
 
     //Con este metodo leeremos el fichero para poder mostrarlo por pantalla en la alineacion y asi poder cambiar los jugadores en la alineacion
     //aun no funciona
-    public void leerFichero(String nomeFicheiro) {
+   /** public void leerFichero(String nomeFicheiro) {
         String resposta;
         Scanner sc = null;
         try {
@@ -65,7 +64,8 @@ public class AlineacionLocal extends javax.swing.JDialog {
         } finally {
             sc.close();
         }
-    }
+    }*/
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

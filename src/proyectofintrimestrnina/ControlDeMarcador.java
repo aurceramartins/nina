@@ -24,6 +24,7 @@ public class ControlDeMarcador extends javax.swing.JFrame {
     ArrayList<Jugadores> jugadores = new ArrayList();
     PrintWriter fich = null;
     Fondo fond = new Fondo();
+    Sonido son = new Sonido();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -59,6 +60,7 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         setTitle("MARCADOR");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("MARCADOR"); // NOI18N
+        setResizable(false);
 
         EditarAlineacionLocal.setBackground(new java.awt.Color(208, 5, 5));
         EditarAlineacionLocal.setFont(new java.awt.Font("AR CENA", 1, 18)); // NOI18N
@@ -84,10 +86,11 @@ public class ControlDeMarcador extends javax.swing.JFrame {
             }
         });
 
-        BotonComenzarPartido.setBackground(new java.awt.Color(255, 0, 0));
+        BotonComenzarPartido.setBackground(new java.awt.Color(206, 6, 6));
         BotonComenzarPartido.setFont(new java.awt.Font("SimSun-ExtB", 1, 12)); // NOI18N
         BotonComenzarPartido.setForeground(new java.awt.Color(255, 255, 255));
         BotonComenzarPartido.setText("Comezo do partido");
+        BotonComenzarPartido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BotonComenzarPartido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonComenzarPartidoActionPerformed(evt);
@@ -132,17 +135,18 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(206, 6, 6));
         jLabel2.setText("Nombre del equipo visitante : ");
 
-        lblNombreEquipoLocal.setBackground(new java.awt.Color(0, 255, 255));
+        lblNombreEquipoLocal.setBackground(new java.awt.Color(206, 6, 6));
         lblNombreEquipoLocal.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreEquipoLocal.setOpaque(false);
+        lblNombreEquipoLocal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         lblNombreEquipoLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lblNombreEquipoLocalActionPerformed(evt);
             }
         });
 
-        lblNombreEquipoVisitante.setForeground(new java.awt.Color(0, 255, 255));
-        lblNombreEquipoVisitante.setOpaque(false);
+        lblNombreEquipoVisitante.setBackground(new java.awt.Color(206, 6, 6));
+        lblNombreEquipoVisitante.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreEquipoVisitante.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         lblNombreEquipoVisitante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lblNombreEquipoVisitanteActionPerformed(evt);
@@ -154,7 +158,7 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(542, Short.MAX_VALUE)
+                .addContainerGap(568, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BotonComenzarPartido)
                     .addComponent(BotonSalir))
@@ -216,9 +220,9 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_BotonSalirActionPerformed
     private void BotonComenzarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComenzarPartidoActionPerformed
+
         //no le hagas caso a los comentarios del medio
         //Este boton inicia el marcador y a la vez el control del marcador, tambien le introducimos el fondo ke lo cogemos de la clase marcadorpartido
-
         Crono reloj = new Crono();
         //Marcador jdiFondo = new Marcador(this, true);
         //Marcador dialog = new Marcador(new javax.swing.JFrame(), true);
@@ -232,7 +236,7 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         jdiFondo.configurar();
         reloj.setVisible(true);
         jdiFondo.setVisible(true);
-        //Sonido soniparti=new Sonido();
+            //Sonido soniparti=new Sonido();
         //soniparti.plusliga();
 
 
