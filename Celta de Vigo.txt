@@ -1,0 +1,11 @@
+Catoira, 1, portero
+Planas, 21, defensa
+Xoni, 19, defensa
+Cabraloca, 22, defensa
+Fontas, 3, defensa
+Nemanja, 6, medio
+Augusto, 24, medio
+Krohn, 23, medio
+Orelludo, 14, medio
+Nolo, 10, medio
+Larrivey, 11, delantero
