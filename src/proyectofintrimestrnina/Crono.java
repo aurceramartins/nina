@@ -9,6 +9,8 @@ public class Crono extends javax.swing.JFrame {
 
     String numero;
     String respuesta;
+    String respuesta1;
+    
 
     public Crono() {
         initComponents();
@@ -150,7 +152,7 @@ public class Crono extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
- 
+
     private Timer t;
     private int minuto, seg;
     private ActionListener acciones = new ActionListener() {
@@ -170,6 +172,7 @@ public class Crono extends javax.swing.JFrame {
     };
 // con este metodo lo que vamos a conseguir es que en el string solo se vean los minutos y segundos hasta 9
     //es decir para ke kede asi 09:09 si le subieramos un segundo mas kedaria 09:010 asi se le suma al otro numero y keda 09:10
+
     public void actualizarLabel() {
         String tiempo = (minuto <= 9 ? "0" : "") + minuto + ":" + (seg <= 9 ? "0" : "") + seg;
         //le mandamos el String al marcador para ke muestre el cronometro en la interfaz
@@ -178,7 +181,7 @@ public class Crono extends javax.swing.JFrame {
 
 
     private void btnPararTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPararTiempoActionPerformed
-       //con este metodo paramos el tiempo restauramos el boton start para ke se pueda volver a presionar y el boton parar lo deshabilitamos
+        //con este metodo paramos el tiempo restauramos el boton start para ke se pueda volver a presionar y el boton parar lo deshabilitamos
         t.stop();
         btnStart.setEnabled(true);
         btnPararTiempo.setEnabled(false);
@@ -187,7 +190,7 @@ public class Crono extends javax.swing.JFrame {
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
         //iniciamos el cronometro y desactivamos este boton para ke no se pueda volver a presionar sin antes parar o reiniciar
         t.start();
-        
+
         btnStart.setEnabled(false);
         //le damos texto al boton para ke ponga reanudar si lo paramos
         btnStart.setText("Reanudar");
@@ -242,10 +245,10 @@ public class Crono extends javax.swing.JFrame {
         } else if (contador.equalsIgnoreCase("9")) {
             MarcadorPartido.golesloc.setText("10");
         }
-//esta mierda estoy probandola pero no me sale
-        String resp = JOptionPane.showInputDialog("¿Quien marco el gol??");
-        respuesta = resp + " " + captura;
 
+        String resp = JOptionPane.showInputDialog("¿Quien marco el gol??");
+        respuesta = respuesta + "\n" + resp + " minuto " + captura;
+        MarcadorPartido.minutogol.setText(respuesta);
     }//GEN-LAST:event_golLocalActionPerformed
 
     private void golVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_golVisitanteActionPerformed
@@ -276,7 +279,8 @@ public class Crono extends javax.swing.JFrame {
         }
 
         String resp = JOptionPane.showInputDialog("¿Quien marco el gol??");
-
+        respuesta1 = respuesta1 + "\n" + resp + " minuto " + captura;
+        MarcadorPartido.minutogolvis.setText(respuesta1);
     }//GEN-LAST:event_golVisitanteActionPerformed
 
     private void descuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descuentoActionPerformed

@@ -18,16 +18,12 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         this.add(fondo, BorderLayout.CENTER);
         this.pack();
         setLocationRelativeTo(null);
-        
 
     }
 
-    
     ArrayList<Jugadores> jugadores = new ArrayList();
     PrintWriter fich = null;
     Fondo fond = new Fondo();
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -216,13 +212,13 @@ public class ControlDeMarcador extends javax.swing.JFrame {
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
         //Boton salir
-        
+
         System.exit(0);
     }//GEN-LAST:event_BotonSalirActionPerformed
     private void BotonComenzarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComenzarPartidoActionPerformed
         //no le hagas caso a los comentarios del medio
         //Este boton inicia el marcador y a la vez el control del marcador, tambien le introducimos el fondo ke lo cogemos de la clase marcadorpartido
-        
+
         Crono reloj = new Crono();
         //Marcador jdiFondo = new Marcador(this, true);
         //Marcador dialog = new Marcador(new javax.swing.JFrame(), true);
@@ -238,8 +234,8 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         jdiFondo.setVisible(true);
         //Sonido soniparti=new Sonido();
         //soniparti.plusliga();
-        
-        
+
+
     }//GEN-LAST:event_BotonComenzarPartidoActionPerformed
 
     private void lblNombreEquipoLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblNombreEquipoLocalActionPerformed
@@ -251,7 +247,7 @@ public class ControlDeMarcador extends javax.swing.JFrame {
     }//GEN-LAST:event_lblNombreEquipoVisitanteActionPerformed
 
     private void EditarAlineacionLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarAlineacionLocalActionPerformed
-       //Este boton te lleva a un menu en el ke puedes editar la alineacion o hacer cambios en el equipo
+        //Este boton te lleva a un menu en el ke puedes editar la alineacion o hacer cambios en el equipo
         int opcion = 0;
 
         do {
@@ -275,10 +271,10 @@ public class ControlDeMarcador extends javax.swing.JFrame {
 
     private void AlineacionVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlineacionVisitanteActionPerformed
         // este hara lo mismo ke el boton de arriba
-        AlineacionVisitante vis=new AlineacionVisitante();
+        AlineacionVisitante vis = new AlineacionVisitante();
         vis.setVisible(true);
         String visit = lblNombreEquipoLocal.getText();
-        vis.leerFichero(visit+".txt");
+        vis.leerFichero(visit + ".txt");
     }//GEN-LAST:event_AlineacionVisitanteActionPerformed
 
 
