@@ -2,6 +2,7 @@ package proyectofintrimestrnina;
 
 public class Jugadores {
 //getters y seters y toString para el arraylist jugadores
+
     String nombre;
     int dorsal;
     String posicion;
@@ -43,7 +44,5 @@ public class Jugadores {
     public String toString() {
         return nombre + ", " + dorsal + ", " + posicion;
     }
-
-    
 
 }

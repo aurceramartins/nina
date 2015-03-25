@@ -1,0 +1,12 @@
+Fabri, 1, portero
+Poroto, 13, portero
+Lopo, 4, defensa
+Luisinho, 3, defensa
+ManuelPablo, 2, defensa
+Sidnei, 5, defensa
+Borges, 6, medio
+Cuenca, 7, medio
+LuisFariña, 8, medio
+Salomao, 9, medio
+LucasPerez, 10, delantero
+HelderPostiga, 11, delantero

@@ -2,8 +2,11 @@ package proyectofintrimestrnina;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 //import javax.swing.Icon;
 //import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -20,11 +23,46 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         setLocationRelativeTo(null);
 
     }
-
+    int cancion;
     ArrayList<Jugadores> jugadores = new ArrayList();
     PrintWriter fich = null;
     Fondo fond = new Fondo();
     Sonido son = new Sonido();
+
+    public void leerEstadisticasLoc(String nomeFicheiro) {
+        Scanner sc = null;
+        String resposta;
+        try {
+            sc = new Scanner(new File(nomeFicheiro)).useDelimiter(",");
+            while (sc.hasNext()) {
+                resposta = sc.next();
+                
+
+            }
+
+        } catch (IOException ex) {
+            System.err.println("erro de lectura" + ex.toString());
+        } finally {
+            sc.close();
+        }
+    }
+
+    public void leerEstadisticasVis(String nomeFicheiro) {
+        Scanner sc = null;
+        String resp;
+        try {
+            sc = new Scanner(new File(nomeFicheiro));
+            while (sc.hasNext()) {
+                resp = sc.next();
+
+            }
+
+        } catch (IOException ex) {
+            System.err.println("erro de lectura" + ex.toString());
+        } finally {
+            sc.close();
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -116,6 +154,11 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         EstadisticasLocales.setContentAreaFilled(false);
         EstadisticasLocales.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EstadisticasLocales.setDefaultCapable(false);
+        EstadisticasLocales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadisticasLocalesActionPerformed(evt);
+            }
+        });
 
         EstadisticasVisitantes.setFont(new java.awt.Font("AR CENA", 1, 18)); // NOI18N
         EstadisticasVisitantes.setForeground(new java.awt.Color(206, 6, 6));
@@ -123,6 +166,11 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         EstadisticasVisitantes.setBorderPainted(false);
         EstadisticasVisitantes.setContentAreaFilled(false);
         EstadisticasVisitantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EstadisticasVisitantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadisticasVisitantesActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("AR CENA", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(206, 6, 6));
@@ -220,25 +268,21 @@ public class ControlDeMarcador extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_BotonSalirActionPerformed
     private void BotonComenzarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComenzarPartidoActionPerformed
-
-        //no le hagas caso a los comentarios del medio
+        /*String loc = lblNombreEquipoLocal.getText();
+        leerEstadisticasLoc(loc + "estadisticas.txt");
+        String visit = lblNombreEquipoVisitante.getText();
+        leerEstadisticasVis(visit + "estadisticas.txt");*/
         //Este boton inicia el marcador y a la vez el control del marcador, tambien le introducimos el fondo ke lo cogemos de la clase marcadorpartido
         Crono reloj = new Crono();
-        //Marcador jdiFondo = new Marcador(this, true);
-        //Marcador dialog = new Marcador(new javax.swing.JFrame(), true);
-        //dialog.setVisible(true);
+        reloj.setVisible(true);
+
         MarcadorPartido jdiFondo = new MarcadorPartido();
         int ancho = 530;
         int alto = 475;
-
         jdiFondo.setSize(ancho, alto);
         jdiFondo.setPreferredSize(new Dimension(ancho, alto));
         jdiFondo.configurar();
-        reloj.setVisible(true);
         jdiFondo.setVisible(true);
-            //Sonido soniparti=new Sonido();
-        //soniparti.plusliga();
-
 
     }//GEN-LAST:event_BotonComenzarPartidoActionPerformed
 
@@ -275,11 +319,39 @@ public class ControlDeMarcador extends javax.swing.JFrame {
 
     private void AlineacionVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlineacionVisitanteActionPerformed
         // este hara lo mismo ke el boton de arriba
-        AlineacionVisitante vis = new AlineacionVisitante();
-        vis.setVisible(true);
-        String visit = lblNombreEquipoLocal.getText();
-        vis.leerFichero(visit + ".txt");
+        int opcion = 0;
+
+        do {
+            switch (Integer.parseInt(JOptionPane.showInputDialog("  MENU \n"
+                    + "1-Algun jugador nuevo en la convocatoria??\n"
+                    + "2- Hacer cambios en el equipo"))) {
+                case 1:
+                    AlineacionVis vis = new AlineacionVis(new javax.swing.JFrame(), true);
+                    String visit = lblNombreEquipoVisitante.getText();
+                    vis.editarAlineacion(visit + ".txt");
+                    break;
+                case 2:
+                    AlineacionVis dialog = new AlineacionVis(new javax.swing.JFrame(), true);
+                    dialog.setVisible(true);
+                    break;
+            }
+        } while (opcion <= 2);
+
+
     }//GEN-LAST:event_AlineacionVisitanteActionPerformed
+
+    private void EstadisticasLocalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadisticasLocalesActionPerformed
+        Estadisticas obj = new Estadisticas();
+        String local = lblNombreEquipoLocal.getText();
+        obj.estadisticasLocal(local + "estadisticas.txt");
+
+    }//GEN-LAST:event_EstadisticasLocalesActionPerformed
+
+    private void EstadisticasVisitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadisticasVisitantesActionPerformed
+        Estadisticas obj1 = new Estadisticas();
+        String visitante = lblNombreEquipoVisitante.getText();
+        obj1.estadisticasVisitante(visitante + "estadisticas.txt");
+    }//GEN-LAST:event_EstadisticasVisitantesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

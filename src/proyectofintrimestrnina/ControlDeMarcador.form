@@ -219,6 +219,9 @@
         </Property>
         <Property name="defaultCapable" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EstadisticasLocalesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="EstadisticasVisitantes">
       <Properties>
@@ -235,6 +238,9 @@
           <Color id="Cursor de Mano"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EstadisticasVisitantesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

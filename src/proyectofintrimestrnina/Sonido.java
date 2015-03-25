@@ -14,7 +14,7 @@ public class Sonido {   //Ponemos el sonido al proyecto
         try {
             FileInputStream song;
 
-            song = new FileInputStream("C:\\Users\\Alex Urcera\\Videos\\canalplus.mp3");
+            song = new FileInputStream("C:\\Users\\Alex Urcera\\Desktop\\clase\\PROGRAMACION\\ProyectofinTrimestrNina\\src\\grabaciones de voz\\canalplus.mp3");
             BufferedInputStream cancion = new BufferedInputStream(song);
             player = new Player(song);
             player.play();
@@ -23,7 +23,6 @@ public class Sonido {   //Ponemos el sonido al proyecto
 
         }
     }
-    
 
     public void rocky() {
 

@@ -9,8 +9,9 @@ public class ProyectofinTrimestrNina {
         control.setVisible(true);
 
         //cancion ,suena cuando se inicia el proyecto
-        Sonido cancionprincipal=new Sonido();
+        Sonido cancionprincipal = new Sonido();
         cancionprincipal.rocky();
+
     }
 
 }

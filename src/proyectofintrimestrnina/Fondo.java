@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 
 public class Fondo extends javax.swing.JPanel {
 //Clase fondo ke configra el fondo del marcador lo dibujamos gracias al metodo graphics lo que hace que el fondo se pueda autoampliar con la ventana
+
     public Fondo() {
 
         //this.setSize(100, 100);
